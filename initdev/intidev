@@ -10,31 +10,28 @@ if [ $# -eq 1 ]
   then
     if [[ $1 == "-help" ]]; then
         echo "
-            — Name : initdev est une  application quelle est faite pour crée une arborecence il lui  faut comme enter d'insérer un nom de votre application et en plus le type du langage utiliser plus le type de license  .
+            — Name : initdev est une  application quelle a un role de crée crée une arborecence il lui  faut comme enter d'insérer un nom de votre application et en plus le type du langage utiliser plus le type de license  .
             — Syntax : ./initdev <nom-project> <type-de-langage ou type de license> .
             — args : -C :quand on utilise un langage c
-                     -C++ : quand on utilise un langage c ++
-                     -CPP : quand on utilise un langage cpp
                      -PY : quand on utilise un langage python
+		     -C++ : quand on utilise un langage c ++
+		     -CPP : quand on utilise un langage cpp
                      -Latex : quand on utilise un editeur de text de type la latex.
-            — author : boudjerda djamel eddine  
+            — author : boudjerda djamel eddine   email : djamel_eddine_boudjerda@outlook.fr."
     else
         mkdir -p $1/{bin,gitignores,sources,}
-        touch $1/main
         touch $1/license
         touch $1/makefile
+	 touch $1/main
         touch $1/install.sh
         exit 0
     fi
 fi
 
-
-
-  
     mkdir -p $1/{bin,gitignores,sources}
-    touch $1/LICENSE
     touch $1/makefile
     touch $1/install.sh
+     touch $1/LICENSE
     case "$2" in
         "-C") cp ./sources/main.c $1/main.c
         ;;
@@ -52,9 +49,7 @@ fi
 	;;
 	"-MIT") cp ./licenses/MIT $1/LICENSE
  	;;
-
        *) 
-        echo "Uknown arguments, please check the help : initdev –help"
-          
+        echo "Uknown arguments, please check the help : initdev –help"  
         exit 1
 esac
