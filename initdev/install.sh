@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 if [ -d "$HOME/.initdev" ]; then
 	exit 1;
 else
@@ -12,5 +10,4 @@ else
 	cp -r ./bin $HOME/.initdev/bin;
 	cp -r ./makefiles $HOME/.initdev/makefiles;
 	exit 0;
-
-fi
+        fi
